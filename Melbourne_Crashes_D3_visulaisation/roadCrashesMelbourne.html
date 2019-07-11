@@ -1,0 +1,123 @@
+<html>
+<head>
+	<title>Melbourne Road Crashes</title>
+
+    <link 
+        rel="stylesheet" 
+        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+    />
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
+
+<link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+<!-- load the d3.js library -->    
+<script src="http://d3js.org/d3.v3.min.js"></script>
+    
+<div class="header">
+        <h1>MARCH MENACE</h1>
+        <h2>A recapitulation of Road Crashes in Melbourne!</h2>
+        <p>This report takes you on a journey to understand better about road traffic accidents and investigate the patterns observed to determine the possible events causing the pattern in Melbourne road accident data.</p>
+        </div>
+    
+<!--    plot map  -->
+<div id="mappy">   
+    <h1>Zoom into the location!</h1>
+    <p>Victoria has encountered over 74908 road crashes during the span of June 2013 to March 2019. Out of which 47138 road crash reports are contributed by Melbourne alone. Analyzing the road crash coordinates in Melbourne could unfold a picture of where the crash reports are concentrated and how the crashes are distributed over the past 5 years.</p>
+    <p>We could zoom into the map to investigate more on road geometry and location of road crashes.</p>
+	<div id="map" style="width: 900px; height: 700px"></div>
+
+	<script src="js/map.js"></script>
+ 
+</div>
+    
+<!--     stacked bar chart   -->
+<div id="Sta">
+    <h1>Are days of the week and months of the year related to road crashes?</h1>
+    <p>Investigating the correlation with number of road crashes, the month of the year and days of the week unveiled a strange yet interesting pattern. Filtering the grouped chart below shows that "Fridays" are the most dangerous day of the week. while, "MARCH" emerges out to be the month of highest road crashes.</p>
+    <p>Please check the legend to filter the corresponding days of the week and use the grouped and stacked views to understand the relation between days of the week and months of the year. </p>
+    <div class="stacked-chart-container js-stacked-chart-container">
+    <form class="controls">
+        <label><input type="radio" name="mode" value="stacked" checked>Stacked</label>
+        <label><input type="radio" name="mode" value="grouped">Grouped</label>
+    </form>
+    <svg class="stacked-chart js-stacked-chart"></svg>
+    <div class="tooltip js-tooltip">
+        <div class="tooltip-wrapper">
+            <table class="tooltip-table js-tooltip-table"></table>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-underscore" class="js-tooltip-table-content">
+<table>
+    <% _.each(bars, function (bar) { %>
+        <tr>
+            <td><%= bar.name %></td>
+            <td><%= bar.value %></td>
+        </tr>
+    <% }); %>
+</table>
+</script>
+
+<script src="https://d3js.org/d3.v3.min.js" integrity="sha384-N8EP0Yml0jN7e0DcXlZ6rt+iqKU9Ck6f1ZQ+j2puxatnBq4k9E8Q6vqBcY34LNbn" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" integrity="sha384-FZY+KSLVXVyc1qAlqH9oCx1JEOlQh6iXfw3o2n3Iy32qGjXmUPWT9I0Z9e9wxYe3" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
+
+    
+<script src="js/stacked.js"></script>
+    
+</div>
+
+<!--young drivers line graph-->
+
+<div id="lin">
+    
+    <h1>Yup! Holidays do get young drivers on wheels.</h1>
+    <p>Considering the general hypothesis of young drivers(aged 18-25) are more likely to encounter accidents over older/expienced drivers.</p>
+    <p>Below graph shows the number of public holidays in melbourne over the past five years and clicking on the button reveal the trends of young drivers reported in crashes over time.</p>
+    <p>Yes, We notice that the month of march has the highest number of public holidays and the highest number of reported young drivers.</p>
+<div id="option">
+<input name="update" 
+           type="button" 
+           value="Young Divers on road[2013-2018]" 
+           onclick="updateData()" />
+</div>
+
+    <script src="js/line.js"> </script>
+
+</div>
+<!--    sankey chart -->
+<div id="sank">
+    <h1>Understand the flow between accident type, alcohol time, road geometry and fatality.</h1>
+    <p>First stage is the Accident Type, followed by alcohol time, road geometry and injuries/fatality.</p>
+    <p>We can clearly interpret the following:</p>
+    <ul>
+    <li>Collision with vehicle (61%) is the most common type of accident, followed by crashes
+which struck pedestrians (28%).</li>
+    <li>43% of the accidents happen during the defined alcohol time.</li>
+    <li>About 45% of the crashes are at the cross intersection, which is followed by 40% of
+the crashes on a non-intersecting roads.</li>
+    <li>We can notice that a large portion of accidents that occur during alcohol time directs
+towards crashes at cross intersection.</li>
+    <li>We can also conclude that highest fatality rate is contributed by roads with cross
+intersection making it the most dangerous road geometry in Melbourne.</li></ul>
+    <p id="chart">
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="js/sankey.js"></script>
+    </div>
+       
+<div class="footer">
+<h1>Thank you!!</h1>
+    <p> </p>
+    <ul>
+  <p>Rajath Akshay Vanikul</p>
+    <p>29498724</p></ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+source,target,value
+Collision with vehicle,Alcohol time(Yes),32
+Collision with vehicle,Alcohol time(No),26
+Struck Pedestrian,Alcohol time(Yes),12
+Struck Pedestrian,Alcohol time(No),14
+Collision with a fixed object,Alcohol time(Yes),7
+Collision with a fixed object,Alcohol time(No),6
+Vehicle overturned (no collision),Alcohol time(Yes),2
+Vehicle overturned (no collision),Alcohol time(No),1
+Alcohol time(Yes),Not an intersection,19
+Alcohol time(No),Not an intersection,20
+Alcohol time(Yes),T intersection,7
+Alcohol time(No),T intersection,7
+Alcohol time(Yes),Cross intersection,24
+Alcohol time(No),Cross intersection,20
+Alcohol time(Yes),Multiple intersection,2
+Alcohol time(No),Multiple intersection,1
+Cross intersection,Injury,40
+Cross intersection,Fatality,4
+Not an intersection,Injury,38
+Not an intersection,Fatality,1
+T intersection,Injury,13
+T intersection,Fatality,1
+Multiple intersection,Injury,2
+Multiple intersection,Fatality,1
